@@ -1,0 +1,107 @@
+
+
+<h1>Akash rpc:</h1> <a href="http://akash.witval.com:1500" target="_blank">http://akash.witval.com:1500</a>
+
+<h1>Akash api:</h1> <a href="http://akash.witval.com:1501" target="_blank">http://akash.witval.com:1501</a>
+
+<h1>addressbook url:</h1> <a href="https://snapshot.witval.com/akash-addrbook/addrbook.json" target="_blank">https://snapshot.witval.com/akash-addrbook/addrbook.json</a>
+
+ 
+ <body>
+        <h1>Snapshot url:</h1>
+        <h5 id="chainValue"></h5>
+        <p id="demo"></p>
+        <a id="snapshotCommand1" href="" target="_blank"></a>
+
+        <script>
+          let b = 'https://snapshot.witval.com/akash-snapshot/';
+      
+          function updateSnapshotData() {
+            fetch('https://snapshot.witval.com/chains-info/latest.json')
+              .then(response => response.json())
+              .then(text => {
+                let chains = text.chains;
+                let value = '';
+                chains.forEach(c => {
+                  if (c['chain-name'] === 'akash') {
+                    value = c['snapshot-name'];
+                    localStorage.setItem("chainValue", value);
+                    let fname = localStorage.getItem("chainValue");
+                    if (fname.endsWith('}')) {
+                      fname = fname.slice(0, -1);
+                    }
+                    document.getElementById("snapshotCommand1").textContent = b + fname;
+                    document.getElementById("snapshotCommand1").href = b + fname;
+
+                    updateSnapshotCommand(fname);
+                  }
+                });
+              });
+          }
+      
+          function updateSnapshotCommand(fname) {
+            let a = 'curl -o --L https://snapshot.witval.com/akash-snapshot/';
+            let b = '  | lz4 -c -d - | tar -x -C ~/.akash';
+            let command = a + fname + b;
+            document.getElementById("snapshotCommand").textContent = command;
+            
+          }
+      function runAtSameTime() {
+      const twentyFourHours = 86400000;
+      const now = new Date();
+      let eta_ms =
+        new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+          6,
+          0,
+          0,
+          0
+        ).getTime() - now;
+      if (eta_ms < 0) {
+        eta_ms += twentyFourHours;
+      }
+      setTimeout(function () {
+       
+        updateSnapshotData();
+        setInterval(updateSnapshotData, twentyFourHours);
+        
+      }, eta_ms);
+    }
+    
+    function runAtSameTimet() {
+      const twentyFourHours = 86400000;
+      const now = new Date();
+      let eta_ms =
+        new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+          18,
+          0,
+          0,
+          0
+        ).getTime() - now;
+      if (eta_ms < 0) {
+        eta_ms += twentyFourHours;
+      }
+      setTimeout(function () {
+        //console.log("before our data");
+        updateSnapshotData();
+        setInterval(updateSnapshotData, twentyFourHours);
+        //console.log("AAAAAAAAAAA");
+      }, eta_ms);
+    }
+    runAtSameTime();
+    runAtSameTimet()
+    updateSnapshotData();
+
+   
+        </script>
+      
+        <h1>Snapshot instruction:</h1>
+        <h2>Execute the following command to download, extract, and place the data folder in the default root directory</h2>
+        <p id="snapshotCommand"></p>
+      </body>
+    

@@ -1,7 +1,10 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/hero.png";
+import Cosmos from "assets/cosmos.png";
+import Akash from "assets/akash.png";
+import Quicksilver from "assets/quicksilver.jpg";
 import Link from "@components/ui/link.astro";
+import vitwit from "assets/vw11.jpg";
 import { Icon } from "astro-icon";
 ---
 
@@ -9,46 +12,54 @@ import { Icon } from "astro-icon";
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
-      src={heroImage}
+      src={vitwit}
       alt="Astronaut in the air"
       widths={[200, 400, 600]}
-      aspectRatio="4:3"
+      aspectRatio="1:1"
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
-      format="avif"
+      format="png" 
     />
   </div>
   <div>
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      Vitwit
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+    <div class="aaa">
+   
+    <br>
+    We provide public goods services for the chains we validate. This includes node snapshot for quickly syncing your node, addressbook for quickly connecting to peers, RPC endpoint and API endpoint.
     </p>
+    </div>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
+
+    
+
+     
       <Link
         href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+        href="https://vitwit.com/"
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Download for Free
+        
+        Visit vitwit
       </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
-      </Link>
+    
     </div>
-  </div>
+   <style>
+   .aaa{
+    font-size: 25px;
+    font-family:sans-serif;
+   }
+
+
+   </style>
+
+  
+
+
+
+
 </main>

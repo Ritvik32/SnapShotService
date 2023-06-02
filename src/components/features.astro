@@ -1,69 +1,276 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import Cosmos from "assets/cosmos1.png";
+import Akash from "assets/ak.jpg";
+import Quicksilver from "assets/quicksilver.jpg";
+import Link from "@components/ui/link.astro";
+import vitwit from "assets/vw11.jpg";
+import Stargaze from "assets/stargaze.png";
+import Tgrade from "assets/Tgrade.png";
+import Desmos from "assets/desmos.png";
+import Juno from "assets/juno.jpeg";
+import Regen from "assets/regen.webp";
 
-const features = [
-  {
-    title: "Bring Your Own Framework",
-    description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
-  },
-  {
-    title: "100% Static HTML, No JS",
-    description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
-  },
-];
+
 ---
 
-<div class="mt-16 md:mt-0">
+  <div class="mt-16 md:mt-0">
+  <div class="temp">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Networks we support:
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
-  </p>
+  
+  </div>
 </div>
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+  
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
+
+
+<style>
+  .img {
+    padding:50px; 
+     width: 200px;
+  height: 200px;
+   border: 5px solid black;
+   margin: 50px
   }
-</div>
+  
+</style>
+
+
+  <div class="abc">
+  <table>
+  <tr>
+    <td style="padding-left: 400px;"> 
+     
+      <Picture
+      src={Cosmos}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+    />
+    
+    <br>
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/cosmos">Cosmos</a> </span>
+              
+    </a>
+   </td>
+   <td> 
+      
+      <Picture
+      src={Akash}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+      
+    />
+    
+    <br>
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/akash">Akash</a> </span>
+              
+    </a>
+   </td>
+    <td> 
+      
+      <Picture
+      src={Quicksilver}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+    />
+    <br>
+     <span style="margin-left: 100px;font-weight: bold;"><a href ="/quicksilver">Quicksilver</a> </span>
+              
+    </a>
+   </td>
+     <td> 
+      
+      <Picture
+      src={Juno}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+      
+    />
+    
+    <br>
+    <!-- <span style="margin-left: 110px;font-weight: bold;"><a href ="myProjectName/src/pages/juno.astro">Juno</a> </span> -->
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/juno">Juno</a> </span>
+              
+    </a>
+   </td>
+   </tr>
+   <tr>
+   <td style="padding-left: 400px;"> 
+     <!-- a href="src/components/Tgrade.astro"> -->
+      <Picture
+      src={Tgrade}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="10:2"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+    />
+    
+    <br>
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/tgrade">Tgrade</a> </span>
+              
+    </a>
+   </td>
+   <td> 
+      
+      <Picture
+      src={Stargaze}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+      
+    />
+    
+    <br>
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/stargaze">Stargaze</a> </span>
+              
+    </a>
+   </td>
+    <td> 
+     
+      <Picture
+      src={Desmos}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif" 
+      class="img"
+      
+      
+    />
+    <br>
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/desmos">Desmos</a> </span>
+              
+    </a>
+   </td>
+     <td> 
+      
+      <Picture
+      src={Regen}
+      alt="image"
+      widths={[700,700, 700]}
+      aspectRatio="1:1"
+      sizes="(max-width: 300px) 30vw, 400px"
+      loading="eager"
+      format="avif"
+      class="img"
+      
+      
+      
+    />
+    
+    <br>
+     <span style="margin-left: 110px;font-weight: bold;"><a href ="/regen">Regen</a> </span>
+              
+    </a>
+   </td>
+
+   </tr>
+   </table>
+   </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
