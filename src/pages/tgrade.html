@@ -40,7 +40,7 @@
       }
   
       function updateSnapshotCommand(fname) {
-        let a = 'curl -o --L https://snapshot.witval.com/tgrade-snapshot/';
+        let a = 'curl -o - -L https://snapshot.witval.com/tgrade-snapshot/';
         let b = '  | lz4 -c -d - | tar -x -C ~/.tgrade';
         let command = a + fname + b;
         document.getElementById("snapshotCommand").textContent = command;

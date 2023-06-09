@@ -40,7 +40,7 @@
           }
       
           function updateSnapshotCommand(fname) {
-            let a = 'curl -o --L https://snapshot.witval.com/omniflix-snapshot/';
+            let a = 'curl -o - -L https://snapshot.witval.com/omniflix-snapshot/';
             let b = '  | lz4 -c -d - | tar -x -C ~/.omniflixhub';
             let command = a + fname + b;
             document.getElementById("snapshotCommand").textContent = command;

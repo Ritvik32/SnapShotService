@@ -38,7 +38,7 @@
       }
   
       function updateSnapshotCommand(fname) {
-        let a = 'curl -o --L https://snapshot.witval.com/regen-snapshot/';
+        let a = 'curl -o - -L https://snapshot.witval.com/regen-snapshot/';
         let b = '  | lz4 -c -d - | tar -x -C ~/.regen';
         let command = a + fname + b;
         document.getElementById("snapshotCommand").textContent = command;
